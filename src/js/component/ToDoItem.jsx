@@ -4,9 +4,9 @@ function ToDoItem(props) {
   return (
     <div
     >
-      <li>{props.text} 
+      <li>{props.label} 
         <button className="deleteItemBtn" onClick={() => {props.onChecked(props.id);}}>
-            <i class="fa-solid fa-trash"></i>
+            <i className="fa-solid fa-trash"></i>
         </button>
       
       </li>

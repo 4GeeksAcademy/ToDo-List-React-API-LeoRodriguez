@@ -5,39 +5,64 @@ import InputArea from "./InputArea";
 function App() {
   const [items, setItems] = useState([]);
   const toTalItemsLeft = items.length;
+  const APIUrl = 'https://playground.4geeks.com/apis/fake/todos/user/LeoRodriguez'
 
 
   useEffect(() => {
-    fetch('https://playground.4geeks.com/apis/fake/todos/user/DillonClass', {
+    fetch(APIUrl, {
       method: "GET",
       headers: {
         "Content-Type": "application/json"
       }
-    })
-    .then(resp => {
-        console.log(resp.ok); // Will be true if the response is successful
-        console.log(resp.status); // The status code=200 or code=400 etc.
-        console.log(resp.text()); // Will try to return the exact result as a string
-        return resp.json(); // (returns promise) Will try to parse the result as JSON and return a promise that you can .then for results
-      })
+    }).then(res=>res.clone().json())
     .then(data => {
-        // Here is where your code should start after the fetch finishes
-        console.log(data); // This will print on the console the exact object received from the server
+      // Here is where your code should start after the fetch finishes
+      console.log(JSON.stringify(data)); // This will print on the console the exact object received from the server
+  })
     
-        setItems(data);
-        console.log(data);
-      })
-    .catch(error => {
-        // Error handling
-        console.log(error);
-    });
   }, []);
+
+       
+
+
+
+
+
 
   function addItem(inputText) {
     if(inputText === ""){
       return alert("Missing Required Field");
     } else{ setItems(prevItems => {
+
+      
+      const newTask ={  label: inputText, done: false };
+
+      setItems([...items, newTask]);
+   // setInputText("");
+
+    fetch(APIUrl, {
+      method: "PUT",
+      body: JSON.stringify(newTask),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => {
+        if (response.status !== 200) {
+          console.error("Failed to update the task on the server.");
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+
+
+
+
+
+
       return [...prevItems, inputText];
+
       });}
     }
   

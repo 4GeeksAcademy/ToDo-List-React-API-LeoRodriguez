@@ -4,12 +4,12 @@ const InputUsername = ({ setUsername, setCardUsername, postData }) => {
 
     const [value, setValue] = useState("");
 
-    /* ---- Capturar el valor del input ---- */
+    /* ---- Get the input value ---- */
     const handleInputChange = (e) => {
         setValue(e.target.value);
     }
 
-    /* ---- Enviar los datos al hacer click en el btn ---- */
+    /* ---- Send data when click btn ---- */
     const handleClickBtn = async () => {
         try {
             if (value !== '') {

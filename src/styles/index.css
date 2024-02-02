@@ -1,98 +1,188 @@
 body {
-    background-color: #ffeaa7;
-    min-height: 70vh;
-    padding: 1rem;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: hsl(198, 1%, 29%);
-    font-family: "Architects Daughter", cursive;
-    text-align: center;
-    font-size: 130%;
-  }
-  
-  .container {
-    width: 100%;
-    height: auto;
-    min-height: 500px;
-    max-width: 500px;
-    min-width: 250px;
-    background: #f1f5f8;
-    background-image: radial-gradient(#bfc0c1 7.2%, transparent 0);
-    background-size: 25px 25px;
-    border-radius: 20px;
-    box-shadow: 4px 3px 7px 2px #00000040;
-    padding: 1rem;
-    box-sizing: border-box;
-  }
-  .heading {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-  }
-  .heading h1 {
-    transform: rotate(2deg);
-    padding: 0.2rem 1.2rem;
-    border-radius: 20% 5% 20% 5%/5% 20% 25% 20%;
-    background-color: #fdcb6e;
-    font-size: 1.5rem;
-  }
-  
-  .form input {
-    box-sizing: border-box;
-    background-color: transparent;
-    padding: 0.7rem;
-    border-bottom-right-radius: 15px 3px;
-    border-bottom-left-radius: 3px 15px;
-    border: solid 3px transparent;
-    border-bottom: dashed 3px #fdcb6e;
-    font-family: "Architects Daughter", cursive;
-    font-size: 1rem;
-    color: hsla(260, 2%, 25%, 0.7);
-    width: 70%;
-    margin-bottom: 20px;
-  }
-  
-  button {
-    padding: 0;
-    margin-left: 10px;
-    border: none;
-    font-family: "Architects Daughter", cursive;
-    text-decoration: none;
-    padding-bottom: 3px;
-    border-radius: 5px;
-    background-color: #ffeaa7;
-  }
-  button span {
-    background: #f1f5f8;
-    display: block;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    border: 2px solid hsl(198, 1%, 29%);
-  }
-  
-  li {
-    text-align: left;
-    position: relative;
-    padding: 0.5rem;
-  }
-
-  li:not(:hover) > button {
-    visibility: hidden;
+  display: flex;
+  justify-content: center;
+  background: whitesmoke;
 }
 
-  .deleteItemBtn{
-    float: right;
-  }
+.to-do-container {
+  margin-top: 30px;
+  min-width: 500px;
+  font-family: 'Times New Roman';
+}
 
-.bottom-p{
+.title {
+  color: rgb(202, 202, 202);
+  font-weight: 300;
+  font-size: 60px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.to-do {
+  border: lightblue 1px solid;
+  width: 40vw;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-size: 20px;
+}
+
+.input-To-Do {
+  border: none;
+  width: 70%;
+  padding: 0px 10px;
+}
+
+input:focus {
+  outline: none;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+.btn-To-Do {
+  width: 30%;
+  min-height: 50px;
+  border: rgba(173, 216, 230, 0.5) 1px solid;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.7);
+  background: rgba(173, 216, 230, 0.1);
+  margin: 5px 0;
+}
+
+.btn-To-Do:active {
+  border: rgba(173, 216, 230, 0.5) 2px solid;
+}
+
+.notes {
+  display: block;
+}
+
+.note {
+  border-bottom: lightblue 1px solid;
+  width: 100%;
+  padding: 15px 10px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.container-input {
+  border-bottom: lightblue 1px solid;
+}
+
+.note-index {
+  color: rgb(119, 180, 201);
+}
+
+.items {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.item--right {
+  color: rgba(173, 216, 230, 0.8);
+}
+
+.item--right:active {
+  color: rgba(255, 0, 0, 0.5);
+}
+
+h6 {
+  color: grey;
+  font-weight: 300;
+  padding: 10px 20px;
+  border-top: lightblue 1px solid;
+}
+
+.letter {
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin: 26px auto 0;
+  max-width: 550px;
+  min-height: 300px;
+  padding: 24px;
   position: relative;
-  top: 20px;
+  width: 80%;
 }
 
-footer{
-  margin-top: 150px;
+.letter:before,
+.letter:after {
+  content: "";
+  height: 98%;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
 }
-  
+
+.letter:before {
+  background: #fafafa;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  left: -5px;
+  top: 4px;
+  transform: rotate(-2.5deg);
+}
+
+.letter:after {
+  background: #f6f6f6;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  right: -3px;
+  top: 1px;
+  transform: rotate(1.4deg);
+}
+
+.container-username {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.input-username {
+  border: rgba(173, 216, 230, 0.5) 1px solid;
+  width: 50%;
+  padding: 6px 10px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.submit-username {
+  width: 30%;
+  min-height: 45px;
+  border: rgba(173, 216, 230, 0.5) 1px solid;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.7);
+  background: rgba(173, 216, 230, 0.1);
+  margin: 5px 10px;
+}
+
+.submit-username:active {
+  border: rgba(173, 216, 230, 0.5) 2px solid;
+}
+
+.btn-delete-all {
+  width: 80%;
+  min-height: 35px;
+  border: rgba(173, 216, 230, 0.5) 1px solid;
+  font-size: 18px;
+  color: rgb(115, 115, 115);
+  background: rgba(173, 216, 230, 0.2);
+  margin: 5px 10px;
+  padding: 5px;
+}
+
+.btn-delete-all:active {
+  border: rgb(137, 178, 192) 1px solid;
+}
+
+.container-btn-delete {
+  display: flex;
+  justify-content: center;
+  margin: 25px;
+}
+
+.delete-all-msg {
+  color: rgb(163, 163, 163);
+  font-weight: 300;
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
